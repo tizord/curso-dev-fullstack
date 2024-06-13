@@ -48,7 +48,7 @@ Agora, vamos colocar alguns valores e tags, a explicação será feita a posteri
         <!-- Isso é um comentário.-->
 
 
-        <h2> Tags de textp </h2>
+        <h2> Tags de texto </h2>
         <p>
             Esse <del>texto</del> <ins> parágrafo </ins> serve para <b>aprender</b> e <strong>explicar</strong> as <i>tags</i> de <mark>formatação de texto</mark>.<br>
             Por isso, <small>estamos</small> escrevendo coisas sem relevância, para podermos ver como que faz isso em html.<br>
@@ -141,20 +141,20 @@ Agora, vamos colocar alguns valores e tags, a explicação será feita a posteri
 ```
 
 Explicação das tags:  
-* <title>: Traz o título da página, lá na aba do navegador,
-* <meta />: Uma tag selfclose, ou seja, ela não necessita o fechamento pois é fechada nela mesmo. Essa tag traz informações relevantes sobre características da página, por exempplo:
-* chartset="UTF-8": O charset é um atributo que traz o encoding da página. UTF-8 permite acentos.
-* <h1>: É a tag de título. Essa tag varia de h1 até h6. É importante usar de maneira correta pois isso afeta, por exemplo, as pequisas do google sobre o conteúdo da sua página.
-* <!-- ... -->: Essa a estrutura do comentário. O comentário não é exibido pelo navegador, nem processado.
-* <b></b>: Tag para colocar em negrito (bold)
-* <strong>: Também da um destaque ao texto, tem função semântica para os buscadores.
-* <i></i>: Itálico
-* <em></em>: Similar ao strong para o itálico. Emphasis 
-* <mark></mark>: Marcação de texto.
-* <small>: Serve para reduzir o tamanho da letra.
-* <sub></sub>: Subescrito.
-* <sup></sup>: Sobrescrito.
-* <del></del>: Risca o texto, para indicar que foi excluído,
-* <ins></ins>: Sublinha o texto para indicar que foi inserido.
-* <br>: Quebra de linha. Uma tag de autofechamento. Não é muito utilizada pois a quebra de linha é feita usando o css.
-* <a > texto </a>
+* **title**>**: Traz o título da página, lá na aba do navegador,
+* **meta**: Uma tag selfclose, ou seja, ela não necessita o fechamento pois é fechada nela mesmo. Essa tag traz informações relevantes sobre características da página, por exempplo:
+* **chartset="UTF-8"**: O charset é um atributo que traz o encoding da página. UTF-8 permite acentos.
+* **h1**: É a tag de título. Essa tag varia de h1 até h6. É importante usar de maneira correta pois isso afeta, por exemplo, as pequisas do google sobre o conteúdo da sua página.
+* **<!--**  : Essa a estrutura do comentário. O comentário não é exibido pelo navegador, nem processado. Ela precisa ser fechada!
+* **b**: Tag para colocar em negrito (bold)
+* **strong**: Também da um destaque ao texto, tem função semântica para os buscadores.
+* **i**: Itálico
+* **em**: Similar ao strong para o itálico. Emphasis 
+* **mark**: Marcação de texto.
+* **small**: Serve para reduzir o tamanho da letra.
+* **sub**: Subescrito.
+* **sup**: Sobrescrito.
+* **del**: Risca o texto, para indicar que foi excluído,
+* **ins**: Sublinha o texto para indicar que foi inserido.
+* **br**: Quebra de linha. Uma tag de autofechamento. Não é muito utilizada pois a quebra de linha é feita usando o css.
+* 

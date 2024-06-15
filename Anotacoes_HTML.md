@@ -1,8 +1,10 @@
 ## HTML básico
 
 O conteúdo html tem que estar entre tags.  
-  
+
+```html  
 <tag> Conteúdo </tag> = Elemento HTML  
+```
   
 O primeiro passo é dizer para o navegador qual é o tipo do documento:  
 

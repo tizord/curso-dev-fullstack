@@ -218,3 +218,158 @@ Vamos mostrar todas:
 ```
 
 No primeiro caso, a imagem vai ocupar 300px dentro da div. Se o tamanho da div for alterado, a imagem continuará a ocupar 300px. No segundo caso, a imagem vai ocupar 50% do tamanho da div que ela está inserida, ou seja, 350px. Se aumentarmos o tamanho da div, a imagem também aumentará, mas sempre correspondendo 50% do tamanho da div.
+
+
+#### Tamanho relativo de fonte
+
+Se não passarmos nada para a fonte, ela terá o tamanho padrão da tag (por exemplo uma tag parágrafo tem tamanho padrão 16px enquanto a tah h1 tem atamanho padrão 32px). O tamanho relativo de fontes é dado pelo parâmetro **em** e **rem** onde o **em** é relativo a classe pai e o **rem** é relativo a classe raiz. Vejamos um exemplo:
+
+```html
+<html>
+    <head></head>
+    <body>
+        <div class="container">
+            <p class="exemplo1"> Esse é um exemplo de texto </p>
+            <p class="exemplo2"> Esse é outro exemplo de texto</p>
+        </div>
+        <p class="exemplo3"> Esse é um novo exemplo de texto </p>
+    </body>
+```
+
+No exemplo acima, temos a div de classe **container** e dentro dela temos duas tags parágrafos com classes diferentes. Fora da div temos outro parágrafo com outra classe. Agora, supondo o seguinte código css:
+
+```css
+.container{
+    font-size: 15px;
+}
+
+.exemplo1{
+    
+}
+
+.exemplo2{
+    font-size: 2em;
+}
+
+html{
+    font-size: 20px;
+}
+
+.exemplo3{
+    font-size: 1.5rem
+}
+```
+Repare que a classe container tem tamanho de 15px, portanto:
+* O exemplo1 tem 15px por estar dentro da div que tem essa classe.
+* O exemplo2 tem 2em, ou seja, 2* o tamanho da classe pai, logo tem: 2*15px = 30px.
+* O html, classe raiz, tem tamanho de fonte de 20px. Todo o documento, se não for definido, terá 20px.
+* O exemplo3 tem 1.5rem, ou seja, 1.5 o tamanho do elemento raiz, logo: 1.5*20px = 30px.
+
+#### Transformação de texto
+
+Vamos ver os principais atributos para transformar o texto. Considere o trecho de código html a seguir:
+
+```html
+<body>
+    <p id="p1"> Texto 1 </p>
+</body>
+```
+
+Agora:
+
+```css
+#p1{
+    text-transform: capitalize;
+    text-decoration: underline;
+    text-align: center;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    line-height: 1em;
+    text-indent: 30px;
+    text-shadow: 5px 5px 10px black; (distância para o lado, distancia para baixo, esfumaçamento da sobra e cor da sombra)
+}
+    
+```
+
+#### Fontes
+
+As famílias de fonte são:
+* Com serifa (as voltinhas)
+* Sem serifa (sem as voltinhas)
+* Monospace (o espaço de todas as letras é igual)
+
+Como podemos mudar as fontes? Vamos ver. Considere o pedaço de código html abaixo:
+```html
+<body>
+    <div>
+        <h1> texto </h1>
+            <p id="paragrafo1"> texto texto texto </p>
+            <p > texto texto texto </p>
+    </div>
+</body>
+```
+
+Agora:
+
+```css
+body{
+    font-family: sans-serif;
+    font-style: italic;
+}
+
+h1{
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#paragrafo1{
+    font-family: "Comic Sans MS", "Arial";
+    font-size: larger;
+    font-variant: small-caps;
+}
+```
+
+No último caso, o que acontece é:
+* Escolhemos a fonte Comic Sans. Mas e se o usuários não tiver essa fonte? Exibe a Arial. É um recurso de backup.
+
+E como podemos customizar nossas fontes?
+
+1) Primeiro precisamos ter acesso a fonte. Um exemplo é o fonts.google.com. Nesse caso, ele disponibiliza um link que devemos importar na tag head.
+2) Podemos baixar a fonte (otf, tff ou woff). Tem-se que atentar para o peso das fontes. Depois devemos criar um font-face:
+```css
+@font-face{
+    font-family: NomeDaFonte;
+    src: url(caminho_da_fonte/fonte.otf);
+}
+```
+3) O site fontsquirrel transforma o arquivo com as fontes em arquivo.tff, para poder ser usado.
+
+#### Border
+
+São as bordas de um elemento. Para criar uma borda, deve-se definir algumas propriedas:
+* border-width: Espessura da borda. Lembrando que é top, right, bottom left
+* border-style: Estilo da borda. O padrão é none
+* border-color: Cor da borda
+* border-radius: Deixa os cantos arredondados
+
+Imagine uma div com id "primeira" e uma tag parágrafo:
+
+```css
+#primeira{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border-width: 5px 10px 15px 20px;
+    border-style: dashed;
+    border-color: blue green red yellow;
+    border-radius: 50%
+}
+
+p{
+    border: 3px solid green;
+}
+```
+
+O estilo da tag parágrafo é short-hand.
+
+#### Margin e Padding

@@ -373,3 +373,105 @@ p{
 O estilo da tag parágrafo é short-hand.
 
 #### Margin e Padding
+
+A margem serve para, evitar que um elemento fique colado no outro, ou seja, é uma distância da borda do elemento para **fora**. Vejamos:
+
+```html
+...
+<body>
+    <div id="primeira">
+    </div>
+
+    <div id="segunda">
+    </div>
+
+    <div id="terceira">
+    </div>
+
+    <p> texto texto... </p>
+
+</body>
+```
+
+
+```css
+#primeira{
+    height: 100px;
+    background-color: blue;
+    margin: 15px 30px;
+}
+
+#segunda{
+    height: 100px;
+    background-color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+#terceira{
+    height: 100px;
+    background-color: green;
+    margin: 20px;
+}
+```
+Alguns pontos são importantes:
+
+No exemplo acima, as divs estão coladas. Mas e se atribuirmos margin-bottom para um elemento e margin-top para o elemento seguinte? Os valores vão somar?  
+Não. Os valores não se somam. O que acontece é que é respeitado o maior (ou igual) valor de margem, ou seja, se for definido margin-bottom = 10px e a margin-top = 9px, será respeitado o espaço de 10px.  
+A tag p (parágrafo) tem uma margem implícita, do próprio elemento.  
+Por fim, temos o short-hand do margin, que funciona da mesma maneira que vimos para a borda.  
+
+Agora vamos olhar o **padding**. O Padding é uma distância da borda do elemento para **dentro** do elemento. É usado do mesmo jeito que a margem, vejamos brevemente:
+
+```css
+p{
+    margin: 10px 15px;
+}
+```
+
+**Box Model** e **Box Sizing**.
+
+Uma atitude comum é atribuir a tag **body** margin e padding iguais a 0, pois isso elimina o espaçamento natural da tag **body**. Mas vamos seguir e entender o que é box model e boz sizing.
+
+Imagina que você tenha duas div onde em ambas definiu-se *height* e *width* como 100px, teremos então um quadrado de lado 100px.
+Só que após isso, se apenas na primeira div, a gente atribuir valor de *padding* ou *border* conseguiremos ver que a div não terá mais 100px, ela irá crescer de acordo com os valores atribuídos a esses atributos. Como podemos fixar que a div precisa ter o tamanho inicial? Usando o atributo **box-sizing**:
+
+```css
+#div1{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    padding: 10px;
+    border: 10px;
+    box-sizing: border-box;
+}
+```
+
+O valor "**box-sizing: border-box**" fixa o tamanho do elemento, onde os demais atributos são contados do limite do elemento para dentro. Repare que isso **não é aplicável** a margem, porque ela é do **elemento para fora**.  
+
+
+**Overflow**
+
+A div é um elemento maleável, ela sempre tenta se moldar para que o texto ou os outros elemento que estão dentro dela, caibam nela. Porém, pode acontecer, de fixarem um altura e largura da div, de modo que o elemento interno fique maior do que ela. Quando isso acontece, temos um **overflow** ou seja, um vazamento de conteúdo. Para resolver, usamos o atributo **overflow: valor;**. Temos algumas opções como:
+* visible,
+* hidden,
+* scroll,
+* auto
+Podemos, também, fixar o eixo do overflow.
+
+```css
+.card{
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+}
+
+.card2{
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+```
